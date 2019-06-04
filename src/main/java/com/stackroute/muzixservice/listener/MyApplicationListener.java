@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 @PropertySource("classpath:configure.properties")
 public class MyApplicationListener implements CommandLineRunner {
-    @Value("${music2.id}")
+    @Value("${track1.id}")
     private int id;
-    @Value("${music2.name}")
+    @Value("${track1.name}")
     private String name;
-    @Value("${music2.comments}")
-    private String comments;
+    @Value("${track1.comment}")
+    private String comment;
 
     TrackDetails music=new TrackDetails();
     @Autowired
@@ -25,7 +25,7 @@ public class MyApplicationListener implements CommandLineRunner {
     public void run(String... args) throws Exception {
         music.setTrackId(id);
         music.setTrackName(name);
-        music.setTrackComment(comments);
+        music.setTrackComment(comment);
         muzixRepository.save(music);
     }
 }

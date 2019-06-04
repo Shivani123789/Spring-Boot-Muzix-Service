@@ -15,9 +15,9 @@ public class CommandlineListener implements ApplicationListener<ContextRefreshed
     private Environment environment;
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        music.setTrackId(Integer.parseInt(environment.getProperty("music1.tid")));
-        music.setTrackName(environment.getProperty("music1.tname"));
-        music.setTrackComment(environment.getProperty("music1.comments"));
+        music.setTrackId(Integer.parseInt(environment.getProperty("track2.id")));
+        music.setTrackName(environment.getProperty("track2.name"));
+        music.setTrackComment(environment.getProperty("track2.comment"));
         muzixRepository.save(music);
     }
 }
